@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <!--  -->
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!--  -->
     <title>Thanos Portfolio</title>
   </head>
   <body>
@@ -38,7 +46,7 @@
       <div class="page1 page">
         <img src="https://i.pinimg.com/originals/65/28/ef/6528ef1203e246237c7155fa3e5200b2.jpg" alt="">
         <div class="page1-content">
-          <h1>About <span class="special">Me :</span></h1>
+          <h1>About <span class="special">Me</span></h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consequatur at ut debitis expedita eaque sapiente saepe cupiditate earum. Ipsa veritatis eveniet consequuntur sunt temporibus ducimus! Optio doloremque nam odio?</p>
         </div>
       </div>
@@ -74,11 +82,30 @@
       <div class="page3 page"></div>
     </div>
     <!-- SCRIPT -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script> 
+     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="script.js"></script>
+    <script>
+      // LENIS
+      function lenis() {
+        const lenis = new Lenis();
+
+        lenis.on("scroll", (e) => {
+          console.log(e);
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+      }
+
+      lenis();
+    </script>
   </body>
 </html>
