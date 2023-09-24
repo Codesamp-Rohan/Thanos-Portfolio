@@ -1,3 +1,12 @@
+function mouseHover() {
+  var circle = document.querySelector(".circle");
+
+  window.addEventListener("mousemove", function (e) {
+    circle.style.left = e.pageX + "px";
+    circle.style.top = e.pageY + "px";
+  });
+}
+
 function revealSpan() {
   document.querySelectorAll(".loader-heading").forEach(function (e) {
     var spanParent = document.createElement("span");
@@ -14,21 +23,22 @@ function revealSpan() {
   });
 }
 
-const cursor = document.querySelector(".cursor");
-document.querySelectorAll(".page2-design .card").forEach(function (e) {
-  e.addEventListener("mousemove", function (dets) {
-    setTimeout(() => {
-      console.log((cursor.style.left = dets.clientX + "px"));
-      console.log((cursor.style.top = dets.clientY + "px"));
-      console.log((cursor.style.opacity = "1"));
-    }, 100);
-  });
-  e.addEventListener("mouseleave", function () {
-    console.log((cursor.style.opacity = "0"));
+mouseHover();
+revealSpan();
+
+const large = document.querySelector(".GobarDhan");
+
+const ball = document.querySelector(".circle");
+large.addEventListener("mousemove", function (e) {
+  gsap.to(ball, {
+    scale: 4,
   });
 });
-
-revealSpan();
+large.addEventListener("mouseleave", function (e) {
+  gsap.to(ball, {
+    scale: 1,
+  });
+});
 
 // LOADER TIMELINE
 const tl = gsap.timeline();
@@ -131,7 +141,7 @@ const tl3 = gsap.timeline({
     trigger: ".page2",
     start: "top 30%",
     end: "bottom 160%",
-    markers: true,
+    // markers: true,
     scrub: 1,
   },
 });
@@ -142,4 +152,22 @@ tl3
   })
   .to(".page2 h1", {
     color: "#101010",
+  });
+
+const tl4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".page3",
+    start: "top 30%",
+    end: "bottom 160%",
+    // markers: true,
+    scrub: 1,
+  },
+});
+
+tl4
+  .to("body", {
+    backgroundColor: "#000",
+  })
+  .to(".page3 img", {
+    scale: 1,
   });

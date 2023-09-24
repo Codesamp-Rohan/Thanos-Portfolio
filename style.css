@@ -10,22 +10,26 @@
   font-family: boom;
   src: url("fonts/Mazius\ Display\ Extraitalic.otf");
 }
-.cursor {
+@font-face {
+  font-family: tall;
+  src: url(fonts/Small\ Tall.ttf);
+}
+.circle {
   position: absolute;
+  width: 40px;
+  height: 40px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 10;
-  width: 100%;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 }
-#cursor a {
-  text-decoration: none;
-  color: #101010;
-  font-size: 20px;
-  background-color: #f88935;
-  padding: 10px 14px;
-  border-radius: 20px;
+a {
+  z-index: 10 !important;
+  mix-blend-mode: difference;
 }
 * {
   padding: 0;
@@ -183,10 +187,96 @@ nav h3 {
 }
 .page2-design .card {
   width: 40vw;
-  /* height: 60vh; */
   position: relative;
+  overflow: hidden;
+  z-index: 10;
 }
 .page2-design .card .card-image img {
   width: 100%;
 }
-/* #f2504d */
+.card-content {
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  bottom: 0px;
+  padding: 40px;
+  transform: translateY(110%);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-content .cursive {
+  font-size: 30px;
+}
+.card-content h2 {
+  font-size: 30px;
+}
+.card:hover > .card-content {
+  transform: translateY(0%);
+  background-color: #000000c5;
+  backdrop-filter: blur(20px);
+}
+.card-content button {
+  padding: 6px 30px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid#f88935;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.card-content button:hover {
+  color: #040d2a;
+  background-color: #f88935;
+}
+.page2 .manymore {
+  color: #696969;
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+/* Page3 */
+.page3 {
+  width: 100%;
+  position: relative;
+}
+.page3 img {
+  width: 100vw;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  scale: 0;
+}
+.page3 h1,
+.page3 .cursive {
+  text-transform: uppercase;
+  font-family: tall;
+  font-size: 88px;
+  font-weight: 900;
+  top: 20%;
+  left: 3%;
+  position: relative;
+  text-align: start;
+  mix-blend-mode: difference;
+  width: 20vw;
+}
+.page3 a {
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #f88935;
+  padding: 6px 20px;
+  transition: 0.4s;
+}
+.page3 a:hover {
+  background-color: #f88935;
+}
+.GobarDhan {
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
