@@ -25,7 +25,7 @@
   mix-blend-mode: difference;
   border-radius: 50%;
   z-index: 1;
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
 a {
   z-index: 10 !important;

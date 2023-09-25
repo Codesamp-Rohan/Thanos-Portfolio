@@ -1,0 +1,119 @@
+@font-face {
+  font-family: pro;
+  src: url("fonts/StretchPro.otf");
+}
+@font-face {
+  font-family: regular;
+  src: url("fonts/fontRegular.ttf");
+}
+@font-face {
+  font-family: boom;
+  src: url("fonts/Mazius\ Display\ Extraitalic.otf");
+}
+@font-face {
+  font-family: tall;
+  src: url(fonts/Small\ Tall.ttf);
+}
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1);
+}
+a {
+  z-index: 10 !important;
+  mix-blend-mode: difference;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: regular;
+  font-size: 18px;
+  font-weight: 100;
+}
+.cursive {
+  font-size: 88px;
+}
+body {
+  background-color: #eee;
+  color: #404040;
+  overflow: hidden;
+}
+h1 {
+  font-size: 8rem;
+  position: relative;
+  font-weight: 900;
+  color: #404040;
+}
+.boom {
+  position: relative;
+  z-index: 8;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+.leftContact {
+  width: 100%;
+  height: 100%;
+}
+.contact img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 10;
+  position: relative;
+  filter: opacity(0%);
+  mix-blend-mode: difference;
+}
+.rightContact {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+form input,
+textarea,
+button {
+  width: 100%;
+  padding: 16px 15px;
+  background-color: transparent;
+  border: 2px solid #404040;
+  border-radius: 4px;
+}
+button {
+  cursor: pointer;
+  border: 2px solid #000;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #ac2a46;
+  border: 2px solid #ac2a46;
+  color: #eee;
+}
+.rightContact a {
+  color: #000;
+  mix-blend-mode: normal;
+  position: absolute;
+  right: 50px;
+}
